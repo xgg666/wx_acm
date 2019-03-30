@@ -1,0 +1,13 @@
+<!--my/dayDuty/dayDuty.wxml-->
+<view class="container">
+    <view class="table">
+        <view class="tr">
+            <view class="th">时间</view>
+            <view class="th">值日生</view>
+        </view>
+        <view class="tr" wx:for="{{all}}">
+            <view class="td">{{item.dayName}}</view>
+            <view class="td">{{item.dutyUserNames}}</view>
+        </view>
+    </view>
+</view>

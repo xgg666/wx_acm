@@ -1,0 +1,24 @@
+<!--my/competition/competition.wxml-->
+<view class="container">
+    <view class="table">
+        <view class="tr">
+            <view class="th">校赛名</view>
+            <view class="th">创建人</view>
+            <view class="th">状态</view>
+        </view>
+        <view class="tr" wx:for="{{all}}">
+            <view class="td">{{item.competitionTitle}}{{item.competitionTitle}}{{item.competitionTitle}}{{item.competitionTitle}}{{item.competitionTitle}}{{item.competitionTitle}}{{item.competitionTitle}}</view>
+            <view class="td">{{item.createUser}}</view>
+            <view class="td" wx:if="{{item.isDone==1}}">
+              <view class="disTop">正在报名</view>
+            </view>
+            <view class="td" wx:if="{{item.isDone!=1}}">
+              <view class="plusFine">正在报名</view>
+            </view>
+        </view>
+    </view>
+    <view>
+      <button>上页</button>
+      <button>上页</button>
+    </view>
+</view>

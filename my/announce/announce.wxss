@@ -1,0 +1,26 @@
+/* my/announce/announce.wxss */
+.disTop{
+    background: #25bb9b;
+        font-size: 12px;
+    padding: 0 3px;
+    height: 18px;
+    line-height: 18px;
+    border-radius: 3px;
+    color: #fff;
+    margin-left: 5px;
+    display: inline-block;
+}
+.plusFine{
+    background: #ff6547;
+	font-size: 12px;
+    padding: 0 3px;
+    height: 18px;
+    line-height: 18px;
+    border-radius: 3px;
+    color: #fff;
+    margin-left: 5px;
+    display: inline-block;
+}
+.dispaly{
+  display: none;
+}

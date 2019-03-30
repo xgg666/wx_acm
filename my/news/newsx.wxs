@@ -1,0 +1,10 @@
+var filter = {
+  getString : function(value) {
+    var msg = value.replace('/<\/?[^>]*>/g', ''); 
+    return msg;
+  }
+}
+// 导出对外暴露的属性
+module.exports = {
+  getString: filter.getString
+}

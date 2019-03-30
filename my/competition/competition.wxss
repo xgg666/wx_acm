@@ -1,0 +1,59 @@
+/* my/competition/competition.wxss */
+
+.table {
+  border: 0px solid darkgray;
+  margin: 20px 0px 20px 0px;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ddd;
+}
+.td {
+    width:33%;
+    justify-content: center;
+    text-align: center;
+    word-wrap:break-word;
+}
+.bg-w{
+  background: snow;
+}
+.bg-g{
+  background: #E6F3F9;
+}
+.th {
+  width: 33%;
+  justify-content: center;
+  background: #dadada;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}
+
+
+
+.disTop{
+    background: #25bb9b;
+        font-size: 12px;
+    padding: 0 3px;
+    height: 18px;
+    line-height: 18px;
+    border-radius: 3px;
+    color: #fff;
+    margin-left: 5px;
+    display: inline-block;
+}
+.plusFine{
+    background: #ff6547;
+	font-size: 12px;
+    padding: 0 3px;
+    height: 18px;
+    line-height: 18px;
+    border-radius: 3px;
+    color: #fff;
+    margin-left: 5px;
+    display: inline-block;
+}

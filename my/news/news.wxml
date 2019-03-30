@@ -1,0 +1,25 @@
+<view>
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__bd">
+      <block wx:for="{{allNews}}" wx:key="newsId">
+      <view class="weui-media-box weui-media-box_text margin_top">
+        <wxs module="filter" src="./newsx.wxs"></wxs>
+        <navigator url="../newsDetail/newsDetail?num={{item.newsId}}">
+          <view class="weui-media-box__title weui-media-box__title_in-text">{{item.newsTitle}}</view>
+        </navigator>
+        <view class="weui-media-box__desc">{{filter.getString(item.newsBody)}}</view>
+        <view class="weui-media-box__info">
+          <view class="weui-media-box__info__meta">{{item.createDate}}</view>
+        </view>
+      </view>
+      </block>
+    </view>
+    <view class="weui-loadmore {{disload}}">
+            <view class="weui-loading"></view>
+            <view class="weui-loadmore__tips">正在加载</view>
+    </view>
+    <view class="weui-loadmore weui-loadmore_line weui-loadmore_dot {{disend}}">
+      <view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,23 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">CUIT-ACM</view>
+        <view class="page__desc">成都信息工程大学ACM校队</view>
+    </view>
+    <view class="page__bd page__bd_spacing">
+        <view class="kind-list">
+            <block wx:for="{{list}}" wx:key="id">
+                <view class="kind-list__item">
+                  <navigator url="{{item.url}}/{{item.url}}">
+                    <view id="{{item.id}}" class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
+                        <view class="weui-flex__item">{{item.name}}</view>
+                        <image class="kind-list__img" src="../example/images/icon_nav_{{item.id}}.png"></image>
+                    </view>
+                  </navigator> 
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class="page__ft">
+        <image src="../example/images/icon_footer.png" style="width: 84px; height: 19px;"></image>
+    </view>
+</view>
