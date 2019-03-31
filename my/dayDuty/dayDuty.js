@@ -26,8 +26,17 @@ Page({
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       success(res) {
-        console.log(res.data);
-        self.setData({all: res.data.resultBean})
+        if (res.data.code == 0) {
+          console.log(res.data);
+          self.setData({ all: res.data.resultBean })
+        }
+        else {
+          ws.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 3000
+          })
+        }
       }
     })
   },

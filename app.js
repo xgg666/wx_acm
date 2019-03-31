@@ -20,6 +20,14 @@ App({
       SelectDayDuty : '/dayDuty/selectDayDuty',
 
       SelectCompetition: '/competition/selectCompetition',
+
+      Attendance: '/attendance/addAttandence',
+
+      
     },
+    data: {
+      openId: '',
+      userId: '',
+    }
    
 });

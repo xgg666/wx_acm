@@ -29,19 +29,28 @@ Page({
       },
       method: 'POST',
       success(res) {
-        console.log(res.data)
-        that.setData({ newsTitle: res.data.resultBean.newsTitle });
-        that.setData({ createDate: res.data.resultBean.createDate });
-        //that.setData({ newsBody: res.data.resultBean.newsBody });
-        WxParse.wxParse('newsBody', 'html', res.data.resultBean.newsBody, that, 5);
-        var classfi='';
-        for (var i = 0; i < res.data.resultBean.classifications.length; i++) {
-          if (i!=0) {
-            classfi = classfi+','
+        if (res.data.code==0){
+          console.log(res.data)
+          that.setData({ newsTitle: res.data.resultBean.newsTitle });
+          that.setData({ createDate: res.data.resultBean.createDate });
+          //that.setData({ newsBody: res.data.resultBean.newsBody });
+          WxParse.wxParse('newsBody', 'html', res.data.resultBean.newsBody, that, 5);
+          var classfi = '';
+          for (var i = 0; i < res.data.resultBean.classifications.length; i++) {
+            if (i != 0) {
+              classfi = classfi + ','
+            }
+            classfi = classfi + res.data.resultBean.classifications[i].className;
           }
-          classfi = classfi + res.data.resultBean.classifications[i].className;
+          that.setData({ newsClass: classfi });
+        } else {
+          ws.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 3000
+          })
         }
-        that.setData({ newsClass: classfi});
+        
       }
     })
   },

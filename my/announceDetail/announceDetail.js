@@ -28,12 +28,20 @@ Page({
       },
       method: 'POST',
       success(res) {
-        console.log(res.data)
-        that.setData({ title: res.data.resultBean.announceTitle });
-        that.setData({ createDate: res.data.resultBean.announceCreateTime });
-        //that.setData({ newsBody: res.data.resultBean.newsBody });
-        WxParse.wxParse('body', 'html', res.data.resultBean.announceBody, that, 5);
-        
+        if (res.data.code==0) {
+          console.log(res.data)
+          that.setData({ title: res.data.resultBean.announceTitle });
+          that.setData({ createDate: res.data.resultBean.announceCreateTime });
+          //that.setData({ newsBody: res.data.resultBean.newsBody });
+          WxParse.wxParse('body', 'html', res.data.resultBean.announceBody, that, 5);
+        }
+        else {
+          ws.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 3000
+          })
+        }
       }
     })
   },

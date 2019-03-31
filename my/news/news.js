@@ -34,18 +34,28 @@ Page({
         pageNum: num
       },
       success(res) {
-        console.log(res.data);
-        var tmp = [];
-        for (var i = 0, l = res.data.resultBean.items.length; i < l; i++) {
-          var s = res.data.resultBean.items[i].newsBody;
+        if (res.data.code==0) {
+          console.log(res.data);
+          var tmp = [];
+          for (var i = 0, l = res.data.resultBean.items.length; i < l; i++) {
+            var s = res.data.resultBean.items[i].newsBody;
             res.data.resultBean.items[i].newsBody = s.replace(/<\/?[^>]*>/g, '').substring(0, 50)
-          tmp.push(res.data.resultBean.items[i])
+            tmp.push(res.data.resultBean.items[i])
+          }
+          var all = self.data.allNews;
+          all = all.concat(tmp);
+          self.setData({ allNews: all })
+          self.setData({ nowPage: res.data.resultBean.currentPage })
+          self.setData({ totalPage: res.data.resultBean.totalPage })
         }
-        var all = self.data.allNews;
-        all = all.concat(tmp);
-        self.setData({ allNews: all })
-        self.setData({ nowPage: res.data.resultBean.currentPage })
-        self.setData({ totalPage: res.data.resultBean.totalPage })
+        else {
+          ws.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 3000
+          })
+        }
+        
       }
     })
   },

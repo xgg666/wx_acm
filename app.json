@@ -1,5 +1,6 @@
 {
   "pages": [
+    "my/login/login",
     "my/index",
     "example/index",
     "example/button/button",

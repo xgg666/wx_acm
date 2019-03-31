@@ -28,24 +28,34 @@ Page({
     wx.request({
       url: app.globalData.localhost + app.globalData.SelectAnnounce,
       header: {
+        'Authorization': app.data.userId,
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       data: {
         pageNum: num
       },
       success(res) {
-        console.log(res.data);
-        var tmp = [];
-        for (var i = 0, l = res.data.resultBean.items.length; i < l; i++) {
-          var s = res.data.resultBean.items[i].announceBody;
-          res.data.resultBean.items[i].announceBody = s.replace(/<\/?[^>]*>/g, '').substring(0, 50)
-          tmp.push(res.data.resultBean.items[i])
+        if (res.data.code==0) {
+          console.log(res.data);
+          var tmp = [];
+          for (var i = 0, l = res.data.resultBean.items.length; i < l; i++) {
+            var s = res.data.resultBean.items[i].announceBody;
+            res.data.resultBean.items[i].announceBody = s.replace(/<\/?[^>]*>/g, '').substring(0, 50)
+            tmp.push(res.data.resultBean.items[i])
+          }
+          var all = self.data.allNews;
+          all = all.concat(tmp);
+          self.setData({ allNews: all })
+          self.setData({ nowPage: res.data.resultBean.currentPage })
+          self.setData({ totalPage: res.data.resultBean.totalPage })
+        } else {
+          ws.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 3000
+          })
         }
-        var all = self.data.allNews;
-        all = all.concat(tmp);
-        self.setData({ allNews: all })
-        self.setData({ nowPage: res.data.resultBean.currentPage })
-        self.setData({ totalPage: res.data.resultBean.totalPage })
+        
       }
     })
   },

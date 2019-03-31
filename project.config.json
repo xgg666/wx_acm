@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -13,7 +13,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.4",
-	"appid": "touristappid",
+	"appid": "wx9b2cde0cb873d47e",
 	"projectname": "te",
 	"debugOptions": {
 		"hidedInDevtools": []

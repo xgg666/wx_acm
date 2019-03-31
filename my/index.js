@@ -1,3 +1,6 @@
+
+var app = getApp();
+
 Page({
   data: {
     list: [
@@ -20,10 +23,6 @@ Page({
         id: 'competition',
         name: '校赛',
         url: 'competition'
-      },
-      {
-        id: 'search',
-        name: '搜索相关'
       }
     ]
   },
@@ -39,5 +38,21 @@ Page({
     this.setData({
       list: list
     });
+  },
+  click: function() {
+    wx.request({
+      url: app.globalData.localhost + app.globalData.Attendance,
+      header: {
+        'Authorization': app.data.userId, 
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      success(res) {
+        wx.showToast({
+          title: res.data.msg,
+          icon: 'none',
+          duration: 3000
+        });
+      }
+    })
   }
 });
