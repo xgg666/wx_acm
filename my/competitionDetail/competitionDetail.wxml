@@ -1,0 +1,23 @@
+
+<import src="../../wxParse/wxParse.wxml" />  
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">{{title}}</view>
+        <view class="page__desc">{{createDate}}</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-article">
+            <view class="weui-article__section">
+                <view class="weui-article__section">
+                    <view class="weui-article__p">
+                        <template is="wxParse" data="{{wxParseData:body.nodes}}" />
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view>
+      <button class="weui-btn" type="default" wx:if="{{isDone==1}}" bindtap='joinCompetition'>参加讲座</button>
+      <button class="weui-btn" type="default" wx:if="{{isDone==0}}"  disabled="true">讲座已结束</button>
+    </view>
+</view>

@@ -1,15 +1,16 @@
-// my/newsDetail/newsDetail.js
-var WxParse = require('../../wxParse/wxParse.js');
+// my/myIndex/myIndex.js
+
 var app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    title: '',
-    body: '',
-    createDate: ''
+    show:0,
+    username:'',
+    image:'',
   },
 
   /**
@@ -17,27 +18,20 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    console.log(options.num)
-    wx.request({
-      url: app.globalData.localhost + app.globalData.AnnounceDetail,
-      data: {
-        announceId: options.num
-      },
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      method: 'POST',
+    that.setData({show: 1});
+    wx.getUserInfo({
+      success(ressx) {
+        var userInfo = ressx.userInfo;
+        console.log(userInfo)
+        that.setData({ username: userInfo.nickName });
+        that.setData({ image: userInfo.avatarUrl });
+      }
+    })
+    wx.login({
       success(res) {
-        if (res.data.code==0) {
-          console.log(res.data)
-          that.setData({ title: res.data.resultBean.announceTitle });
-          that.setData({ createDate: res.data.resultBean.announceCreateTime });
-          //that.setData({ newsBody: res.data.resultBean.newsBody });
-          WxParse.wxParse('body', 'html', res.data.resultBean.announceBody, that, 5);
-        }
-        else {
-          
-        }
+        console.log(res)
+        console.log(res.code);
+
       }
     })
   },
@@ -53,6 +47,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that = this;
+    console.log('yes')
+    that.setData({ show: 1 })
 
   },
 
@@ -60,6 +57,9 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
+    var that = this;
+    console.log('no')
+    that.setData({ show: 0 })
 
   },
 

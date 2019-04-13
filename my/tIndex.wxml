@@ -1,0 +1,54 @@
+<!--my/tIndex.wxml-->
+<view  class="page">
+  <view >
+    	
+    <image class='bai' src="../image/index2.png">
+    </image>
+  </view>
+  <view>
+    <view style='background-color:#ffffff'>
+        <view class="weui-grids">
+            <block wx:for="{{list}}" wx:key="id">
+                <navigator url="{{item.url}}" class="weui-grid" hover-class="weui-grid_active" style='width:25%'>
+                    <image class="weui-grid__icon" src="../image/{{item.id}}" />
+                    <view class="weui-grid__label">{{item.name}}</view>
+                </navigator>
+            </block>
+        </view>
+    </view>
+  </view>
+  <view style='margin-top:30px'>
+    <view class="page__bd page__bd_spacing">
+      <view class="kind-list">
+        <view class="kind-list__item" >
+          <view class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}">
+            <view class="weui-flex__item">今日值日</view>
+            <view>{{dayUser}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="kind-list">
+        <view class="kind-list__item" bindtap='click'>
+          <view class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
+            <view class="weui-flex__item">签到</view>
+            <image class="kind-list__img" src="../example/images/icon_nav_widget.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="kind-list">
+        <view class="kind-list__item" bindtap='click'>
+          <view class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}">
+            <view class="weui-flex__item">关于我们</view>
+            <image class="kind-list__img" src="../image/our.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+
+  
+  <view class="page__ft">
+        <image src="../example/images/icon_footer.png" style="width: 84px; height: 19px;"></image>
+  </view>
+</view>

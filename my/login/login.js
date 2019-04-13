@@ -43,12 +43,27 @@ Page({
                   'content-type': 'application/x-www-form-urlencoded' // 默认值
                 },
                 success(ressx) {
+                  console.log(ressx);
                   if (ressx.data.code == 0) {
                     console.log(ressx);
+                    console.log('登录成功');
                     app.data.userId = ressx.data.resultBean.token;
-                    console.log(app.data.userId);
+                    console.log(ressx.data.resultBean.token);
+                    wx.switchTab({
+                      url: '../tIndex'
+                    })
+                  }
+                  else if (ressx.data.code==2) {
+                    console.log('第一次登录，尚未注册');
                     wx.redirectTo({
-                      url: '../index'
+                      url: '../register/register'
+                    })
+                  }
+                  else {
+                    wx.showToast({
+                      title: ressx.data.msg,
+                      icon: 'none',
+                      duration: 2000
                     })
                   }
 

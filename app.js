@@ -20,10 +20,24 @@ App({
       SelectDayDuty : '/dayDuty/selectDayDuty',
 
       SelectCompetition: '/competition/selectCompetition',
+      CompetitionDetail: '/competition/detailCompetition',
+      UserCompetition: '/competition/userCompetition',
+      JoinCompetition: '/competition/joinCompetition',
 
       Attendance: '/attendance/addAttandence',
 
+      ProgramRegister: '/program/register',
       
+      GLogin: '/program/gLogin',
+      GUid:'/program/getUId',
+
+      GetIndexInfo: '/info/getIndexInfo',
+
+      SelectUserImpression: '/impression/selectUserImpression',
+      UserImpression: '/impression/userImpression',
+      AddImpression:'/impression/addImpression',
+      AgreeImpression: '/impression/agreeImpression',
+      InterestImpression: '/impression/interestImpression',
     },
     data: {
       openId: '',

@@ -1,0 +1,67 @@
+<!--my/impression/impression.wxml-->
+<view>
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__bd" >
+      <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+          <image class="weui-media-box__thumb"  src="{{image}}" />
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view class="weui-media-box__title">{{username}}</view>
+          
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <view class='backBai center' style=''>
+    <block wx:for="{{impressionList}}" wx:key="impressionId">
+    <view class="weui-badge" style="margin-left: 13px; margin-top:10px;background-color:{{color[item.impressionId%3]}}" bindtap='agree' data-id="{{item.impressionId}}">
+      {{item.impressionTitle}}<image style='height:10px;width:10px;' src="../../image/good.png"/><text style='font-size:9px;'>{{item.agreeNum}}</text>
+    </view> 
+    </block>
+    <view wx:if="{{impressionList.length==0}}">暂无数据</view>
+  </view>
+  
+  
+  <view style='margin-top:20px;'>
+    <view style='margin:10px;'>
+      你可能感兴趣的人
+    </view>
+  </view>
+  
+  <view class='backBai'>
+    <view class="weui-flex">
+      <view class="weui-flex__item" wx:if="{{interestList.length>0}}">
+        <view class="placeholder" style='border: 1px solid #ccc;'>
+          <view class="weui-panel__bd" >
+            <navigator url="../impressionDetail/impressionDetail?num={{interestList[0].userId}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb"  src="{{interestList[0].image}}" />
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title">{{interestList[0].username}}</view>
+                
+              </view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+      <view class="weui-flex__item" wx:if="{{interestList.length>0}}">
+        <view class="placeholder" style='border: 1px solid #ccc;'>
+          <view class="weui-panel__bd" >
+            <navigator url="../impressionDetail/impressionDetail?num={{interestList[1].userId}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb"  src="{{interestList[1].image}}" />
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title">{{interestList[1].username}}</view>
+                
+              </view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+</view>

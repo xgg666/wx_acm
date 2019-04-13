@@ -54,5 +54,8 @@ Page({
         });
       }
     })
-  }
+  },
+  onLoad: function (options) {
+    
+  },
 });

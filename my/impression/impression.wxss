@@ -1,0 +1,8 @@
+/* my/impression/impression.wxss */
+
+.backBai{
+  background-color: #ffffff;
+}
+.dispaly{
+  display: none;
+}

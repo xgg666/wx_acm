@@ -1,0 +1,9 @@
+/* my/myIndex/myIndex.wxss */
+.title{
+  margin: 20px;
+  padding: 10px;
+  font-size: 20px;
+}
+.backBai{
+  background-color: #ffffff;
+}
