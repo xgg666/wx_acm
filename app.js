@@ -10,7 +10,7 @@ App({
     },
     globalData: {
       hasLogin: false,
-      localhost: 'http://192.168.31.69:9999',
+      localhost: 'http://localhost:9999',
       SelectNews: '/news/selectNewsMain',
       NewsDetail: '/news/detail',
 

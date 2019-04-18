@@ -17,7 +17,7 @@
         </view>
     </view>
     <view>
-      <button class="weui-btn" type="default" wx:if="{{isDone==1}}" bindtap='joinCompetition'>参加讲座</button>
-      <button class="weui-btn" type="default" wx:if="{{isDone==0}}"  disabled="true">讲座已结束</button>
+      <button class="weui-btn" type="default" wx:if="{{isDone==1}}" bindtap='joinCompetition'>参加校赛</button>
+      <button class="weui-btn" type="default" wx:if="{{isDone==0}}"  disabled="true">校赛报名已截止</button>
     </view>
 </view>

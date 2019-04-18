@@ -23,7 +23,7 @@ Page({
         console.log(res)
         console.log(res.code);
         wx.request({
-          url: 'http://192.168.31.69:9999/program/getUId',
+          url: 'http://localhost:9999/program/getUId',
           data: {
             code: res.code
           },
@@ -35,7 +35,7 @@ Page({
               console.log(ress);
               app.data.openId = ress.data.resultBean;
               wx.request({
-                url: 'http://192.168.31.69:9999/program/gLogin',
+                url: 'http://localhost:9999/program/gLogin',
                 data: {
                   unionid: ress.data.resultBean
                 },

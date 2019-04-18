@@ -80,7 +80,7 @@ Page({
           success(res) {
             console.log(res)
             wx.request({
-              url: 'http://192.168.31.69:9999/program/getUId',
+              url: 'http://localhost:9999/program/getUId',
               data: {
                 code: res.code
               },
@@ -108,7 +108,7 @@ Page({
                   success(ress) {
                     if (ress.data.code == 0 || ress.data.code == 2) {
                       wx.redirectTo({
-                        url: '../index',
+                        url: '../indtIndexex',
                       })
                     } else {
                       wx.showToast({

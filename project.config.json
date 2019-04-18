@@ -14,10 +14,12 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.6.4",
 	"appid": "wx9b2cde0cb873d47e",
-	"projectname": "te",
+	"projectname": "wx_acm",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

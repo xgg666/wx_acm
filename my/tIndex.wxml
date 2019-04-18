@@ -29,7 +29,7 @@
       </view>
       <view class="kind-list">
         <view class="kind-list__item" bindtap='click'>
-          <view class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
+          <view class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" bindtap="click">
             <view class="weui-flex__item">签到</view>
             <image class="kind-list__img" src="../example/images/icon_nav_widget.png"></image>
           </view>
