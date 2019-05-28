@@ -43,7 +43,9 @@
     "my/impression/impression",
     "my/impressionDetail/impressionDetail",
     "my/userCompetition/userCompetition",
-    "my/myImpression/myImpression"
+    "my/myImpression/myImpression",
+    "my/updateUserInfo/updateUserInfo",
+    "my/aboutUs/aboutUs"
   ],
   "tabBar": {
     "color": "#7A7E83",

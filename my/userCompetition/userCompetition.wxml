@@ -1,5 +1,6 @@
 <!--my/userCompetition/userCompetition.wxml-->
 <!--my/myIndex/myIndex.wxml-->
+<view>我报名的校赛</view>
 <view>
   <view class="weui-panel" style="margin-top:20px">
     <view class="weui-panel__bd">
@@ -9,7 +10,7 @@
           <navigator url="../competitionDetail/competitionDetail?num={{item.competitionId}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
             <view class="weui-cell__hd"><image src="{{icon20}}" style="width: 20px;height: 20px;margin-right: 5px" /></view>
             <view class="weui-cell__bd weui-cell_primary">
-              <view>我报名的校赛{{item.competitionTitle}}</view>
+              <view>{{item.competitionTitle}}</view>
             </view>
             <view class="weui-cell__ft weui-cell__ft_in-access"></view>
           </navigator>

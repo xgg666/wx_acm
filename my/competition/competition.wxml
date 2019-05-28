@@ -3,7 +3,7 @@
     <view class="table">
         <view class="tr">
             <view class="th">校赛名</view>
-            <view class="th">创建人</view>
+            <view class="th">校赛时间</view>
             <view class="th">状态</view>
         </view>
         <view class="tr" wx:for="{{all}}">
@@ -13,7 +13,7 @@
             {{item.competitionTitle}}
             </navigator>
             </view>
-            <view class="td">{{item.createUser}}</view>
+            <view class="td">{{item.createDate}}</view>
             <view class="td" wx:if="{{item.isDone==1}}">
               <view class="disTop">正在报名</view>
             </view>

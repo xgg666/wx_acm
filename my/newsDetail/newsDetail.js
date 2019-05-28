@@ -44,7 +44,7 @@ Page({
           }
           that.setData({ newsClass: classfi });
         } else {
-          ws.showToast({
+          wx.showToast({
             title: res.data.msg,
             icon: 'none',
             duration: 3000

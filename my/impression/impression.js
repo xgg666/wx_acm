@@ -77,9 +77,14 @@ Page({
           all = all.concat(tmp);
           self.setData({ all: all })
           self.setData({ nowPage: res.data.resultBean.currentPage })
-          self.setData({ totalPage: res.data.resultBean.totalPage })
+          self.setData({ totalPage: res.data.resultBean.totalPage });
+          if (res.data.resultBean.currentPage == res.data.resultBean.totalPage) {
+            self.setData({ disload: 'dispaly' });
+            self.setData({ disend: '' });
+
+          }
         } else {
-          ws.showToast({
+          wx.showToast({
             title: res.data.msg,
             icon: 'none',
             duration: 3000

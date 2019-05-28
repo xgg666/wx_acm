@@ -20,9 +20,10 @@ App({
       SelectDayDuty : '/dayDuty/selectDayDuty',
 
       SelectCompetition: '/competition/selectCompetition',
-      CompetitionDetail: '/competition/detailCompetition',
+      CompetitionDetail: '/competition/detailCompetitionWithUser',
       UserCompetition: '/competition/userCompetition',
       JoinCompetition: '/competition/joinCompetition',
+      QuitCompetition: '/competition/quitCompetition',
 
       Attendance: '/attendance/addAttandence',
 
@@ -38,6 +39,8 @@ App({
       AddImpression:'/impression/addImpression',
       AgreeImpression: '/impression/agreeImpression',
       InterestImpression: '/impression/interestImpression',
+      GetUserInfo: '/userLogin/getUserInfo',
+      UpdateUserInfo:'/userLogin/updateUserInfo/',
     },
     data: {
       openId: '',

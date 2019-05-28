@@ -68,7 +68,7 @@ Page({
         if (res.data.code == 0) {
           that.setData({ dayUser: res.data.resultBean.nowDuty });
         } else {
-          ws.showToast({
+          wx.showToast({
             title: '获取值日生失败',
             icon: 'none',
             duration: 3000

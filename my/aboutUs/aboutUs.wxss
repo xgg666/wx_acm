@@ -1,0 +1,12 @@
+/* my/aboutUs/aboutUs.wxss */
+.head{
+  font-size: 20px;
+}
+.marginT{
+  margin-top: 20px;
+}
+
+.center{
+  align-self: center;
+  text-align: center;
+}

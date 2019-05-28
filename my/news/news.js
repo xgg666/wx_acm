@@ -49,7 +49,7 @@ Page({
           self.setData({ totalPage: res.data.resultBean.totalPage })
         }
         else {
-          ws.showToast({
+          wx.showToast({
             title: res.data.msg,
             icon: 'none',
             duration: 3000

@@ -31,7 +31,7 @@
                     <view class="weui-label">真实姓名</view>
                 </view>
                 <view class="weui-cell__bd">
-                    <input class="weui-input" placeholder="请输入学号" type="number"
+                    <input class="weui-input" placeholder="请输入姓名" type="number"
                     bindinput="realNameChange"
                     />
                 </view>

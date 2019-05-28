@@ -36,11 +36,13 @@
         </view>
       </view>
       <view class="kind-list">
-        <view class="kind-list__item" bindtap='click'>
+        <view class="kind-list__item">
+          <navigator url="aboutUs/aboutUs">
           <view class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}">
             <view class="weui-flex__item">关于我们</view>
             <image class="kind-list__img" src="../image/our.png"></image>
           </view>
+          </navigator>
         </view>
       </view>
     </view>

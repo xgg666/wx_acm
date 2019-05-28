@@ -1,49 +1,25 @@
-// my/news/news.
-var app = getApp()
+// my/aboutUs/aboutUs.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    all: []
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var self = this;
-    self.getNews(self.data.nowPage);
+
   },
 
-  getNews: function (num) {
-    var self = this;
-    console.log(self.data)
-    wx.request({
-      url: app.globalData.localhost + app.globalData.SelectDayDuty,
-      header: {
-        'content-type': 'application/x-www-form-urlencoded' // 默认值
-      },
-      success(res) {
-        if (res.data.code == 0) {
-          console.log(res.data);
-          self.setData({ all: res.data.resultBean })
-        }
-        else {
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'none',
-            duration: 3000
-          })
-        }
-      }
-    })
-  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+
   },
 
   /**
@@ -78,7 +54,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    
 
   },
 

@@ -12,18 +12,22 @@ Page({
     createDate: '',
     isDone:0,
     competitionId:0,
+    isJoin:0,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
     console.log(options.num)
+    this.getDetailCompetition(options.num);
+  },
+  getDetailCompetition: function (num) {
+    var that = this;
     wx.request({
-      url: app.globalData.localhost + app.globalData.CompetitionDetail ,
+      url: app.globalData.localhost + app.globalData.CompetitionDetail,
       data: {
-        competitionId: options.num
+        competitionId: num
       },
       header: {
         'Authorization': app.data.userId,
@@ -37,11 +41,16 @@ Page({
           that.setData({ competitionId: res.data.resultBean.competitionId });
           that.setData({ createDate: res.data.resultBean.createDate });
           that.setData({ isDone: res.data.resultBean.isDone });
+          that.setData({ isJoin: res.data.resultBean.isJoin });
           //that.setData({ newsBody: res.data.resultBean.newsBody });
           WxParse.wxParse('body', 'html', res.data.resultBean.competitionBody, that, 5);
         }
         else {
-
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 3000
+          })
         }
       }
     })
@@ -66,6 +75,7 @@ Page({
             icon: 'none',
             duration: 3000
           })
+          that.setData({ isJoin: 1 })
         }
         else {
           wx.showToast({
@@ -74,7 +84,39 @@ Page({
             duration: 3000
           })
         }
-      }
+      },
+    })
+  },
+  quitCompetition: function () {
+    var that = this;
+    wx.request({
+      url: app.globalData.localhost + app.globalData.QuitCompetition,
+      data: {
+        competitionId: that.data.competitionId
+      },
+      header: {
+        'Authorization': app.data.userId,
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method: 'POST',
+      success(res) {
+        console.log(res.data)
+        if (res.data.code == 0) {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 3000
+          })
+          that.setData({ isJoin: 0 })
+        }
+        else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 3000
+          })
+        }
+      },
     })
   },
   /**

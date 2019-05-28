@@ -45,7 +45,7 @@ Page({
           that.setData({ impressionList: res.data.resultBean.impressionList });
         }
         else {
-          ws.showToast({
+          wx.showToast({
             title: res.data.msg,
             icon: 'none',
             duration: 3000
@@ -69,7 +69,7 @@ Page({
           that.setData({interestList: res.data.resultBean});
         }
         else {
-          ws.showToast({
+          wx.showToast({
             title: res.data.msg,
             icon: 'none',
             duration: 3000
@@ -118,7 +118,7 @@ Page({
             that.getUserImpression(that.data.userId);
           }
           else {
-            ws.showToast({
+            wx.showToast({
               title: res.data.msg,
               icon: 'none',
               duration: 3000
@@ -150,7 +150,7 @@ Page({
           that.getUserImpression(that.data.userId);
         }
         else {
-          ws.showToast({
+          wx.showToast({
             title: res.data.msg,
             icon: 'none',
             duration: 3000
