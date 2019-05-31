@@ -49,8 +49,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var self = this;
-    self.getNews(self.data.nowPage);
+    // var self = this;
+    // self.getNews(self.data.nowPage);
   },
 
   getNews: function (num) {
@@ -105,7 +105,9 @@ Page({
    */
   onShow: function () {
     var that = this;
-    that.setData({show:1});
+    that.setData({ show: 1 });
+    that.setData({ all: [] });
+    that.getNews(that.data.nowPage);
   },
 
   /**

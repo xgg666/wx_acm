@@ -28,6 +28,7 @@ Page({
     wx.request({
       url: app.globalData.localhost + app.globalData.SelectNews,
       header: {
+        'Authorization': app.data.userId,
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       data: {

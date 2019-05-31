@@ -24,6 +24,7 @@ Page({
         announceId: options.num
       },
       header: {
+        'Authorization': app.data.userId,
         'content-type': 'application/x-www-form-urlencoded'
       },
       method: 'POST',

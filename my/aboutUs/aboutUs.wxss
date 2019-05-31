@@ -10,3 +10,7 @@
   align-self: center;
   text-align: center;
 }
+
+.bianhong{
+  color:red;
+}
